@@ -30,7 +30,7 @@ struct HomeView: View {
                     .foregroundStyle(.secondary)
                 
                 NavigationLink {
-                    Text("Lista sprzedawców")
+                    VendorsListView()
                 } label: {
                     Text("Przeglądaj sprzedawców")
                         .fontWeight(.semibold)
