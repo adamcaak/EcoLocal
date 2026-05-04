@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct VendorsListView: View {
+    
+    @StateObject private var viewModel = VendorViewModel()
+    
     var body: some View {
-        List(mockVendors) { vendor in
+        List(viewModel.vendors) { vendor in
             NavigationLink {
                 VendorDetailView(vendor: vendor)
             } label: {
