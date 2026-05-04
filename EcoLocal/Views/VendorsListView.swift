@@ -10,17 +10,21 @@ import SwiftUI
 struct VendorsListView: View {
     var body: some View {
         List(mockVendors) { vendor in
-            HStack {
-                Image(systemName: "leaf")
-                    .foregroundStyle(.green)
-                
-                VStack(alignment: .leading) {
-                    Text(vendor.name)
-                        .font(.headline)
+            NavigationLink {
+                VendorDetailView(vendor: vendor)
+            } label: {
+                HStack {
+                    Image(systemName: "leaf")
+                        .foregroundStyle(.green)
                     
-                    Text(vendor.category)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
+                    VStack(alignment: .leading) {
+                        Text(vendor.name)
+                            .font(.headline)
+                        
+                        Text(vendor.category)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
                 }
             }
         }
