@@ -9,7 +9,7 @@ import SwiftUI
 
 struct VendorsListView: View {
     
-    @StateObject private var viewModel = VendorViewModel()
+    @EnvironmentObject var viewModel: VendorViewModel
     
     var body: some View {
         List(viewModel.filteredVendors) { vendor in

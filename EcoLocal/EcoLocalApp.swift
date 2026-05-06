@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct EcoLocalApp: App {
+    @StateObject private var viewModel = VendorViewModel()
+    
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environmentObject(viewModel)
         }
     }
 }

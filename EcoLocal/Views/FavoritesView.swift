@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct FavoritesView: View {
+    
+    @EnvironmentObject var viewModel: VendorViewModel
+    
     var body: some View {
-        Text("Ulubieni sprzedawcy")
-            .navigationTitle("Ulubione")
+        List (
+            viewModel.vendors.filter { $0.isFavorite }
+        ) { vendor in
+            NavigationLink {
+                VendorDetailView(vendor: vendor)
+            } label: {
+                Text(vendor.name)
+            }
+        }
+        .navigationTitle("Ulubione")
     }
 }
 
