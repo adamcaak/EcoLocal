@@ -38,4 +38,5 @@ struct FavoritesView: View {
 
 #Preview {
     FavoritesView()
+        .environmentObject(VendorViewModel())
 }

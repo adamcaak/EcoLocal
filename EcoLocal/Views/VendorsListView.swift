@@ -51,4 +51,5 @@ struct VendorsListView: View {
 
 #Preview {
     VendorsListView()
+        .environmentObject(VendorViewModel())
 }
