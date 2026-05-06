@@ -12,4 +12,5 @@ struct Vendor: Identifiable {
     let name: String
     let category: String
     let description: String
+    var isFavorite: Bool = false
 }

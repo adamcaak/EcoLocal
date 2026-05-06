@@ -28,6 +28,16 @@ struct VendorsListView: View {
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }
+                    
+                    Spacer()
+                    
+                    Button {
+                        viewModel.toggleFavorite(for: vendor)
+                    } label: {
+                        Image(systemName: vendor.isFavorite ? "heart.fill" : "heart")
+                            .foregroundStyle(.red)
+                    }
+                    .buttonStyle(.plain)
                 }
             }
         }

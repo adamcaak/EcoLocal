@@ -26,6 +26,12 @@ final class VendorViewModel: ObservableObject {
     func addVendor(_ vendor: Vendor) {
         vendors.append(vendor)
     }
+    
+    func toggleFavorite(for vendor: Vendor) {
+        if let index = vendors.firstIndex(where: { $0.id == vendor.id }) {
+            vendors[index].isFavorite.toggle()
+        }
+    }
 }
 
 
