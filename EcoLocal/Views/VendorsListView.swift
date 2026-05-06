@@ -12,7 +12,7 @@ struct VendorsListView: View {
     @StateObject private var viewModel = VendorViewModel()
     
     var body: some View {
-        List(viewModel.vendors) { vendor in
+        List(viewModel.filteredVendors) { vendor in
             NavigationLink {
                 VendorDetailView(vendor: vendor)
             } label: {
@@ -32,6 +32,10 @@ struct VendorsListView: View {
             }
         }
         .navigationTitle("Sprzedawcy")
+        .searchable(
+            text: $viewModel.searchText,
+            prompt: "Szukaj sprzedawcy lub kategorii"
+        )
     }
 }
 
